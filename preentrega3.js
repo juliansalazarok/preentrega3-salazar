@@ -92,7 +92,14 @@ function calcular_estadia(){
 
 let recuperando = JSON.parse(localStorage.getItem("estadía"));
 
+if(recuperando && recuperando.length){
+    
+    recuperando.forEach(respuesta=>mostrar_estadia(respuesta));
+}
+
+
 function mostrar_estadia(recuperando){
+    console.log(recuperando);
     let fila = document.createElement("tr");
     fila.innerHTML = `<td>${recuperando.noches}</td>
                     <td>${recuperando.alojamiento}</td>
